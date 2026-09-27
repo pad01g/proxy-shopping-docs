@@ -28,7 +28,7 @@ permalink: /protocol/
 | 30502 / 30503 | shopper / escrow | プロフィール（手数料、現金で行ける地域、xpub、受け取りアドレス） |
 | 10050 | 各主体 | 自分宛てのメッセージを受け取るリレー |
 
-新旧は `v` タグのバージョンで決めます。有効期限は持ちません。
+新旧は `v` タグのバージョンで決めます（ふつうは署名した時刻の UNIX 秒）。有効期限は持ちません。
 配布は Nostr リレーと libp2p の gossipsub の両方で行い、Go ノードは一方で受け取ったものをもう一方へ中継します。
 
 ## メッセージ
@@ -42,8 +42,10 @@ NIP-59（gift wrap → seal → 中身）で包みます。
   紛争のときに、`attachment` として分けて escrow に送ります。
 
 ```
-order.request → order.quote → order.accept → （入金）→ order.funded + escrow.notice
+order.request + order.escrow_key → order.quote → order.accept → （入金）→ order.funded + escrow.notice
 → order.purchased → order.shipping → order.release → order.completed
+取り消し・払い戻し: order.cancel（入金前）, order.refund（shopper からの協力的な払い戻し）
+その他: ack（受領）, chat
 紛争: dispute.open → dispute.evidence_request → dispute.evidence (+ attachment) → dispute.ruling → dispute.countersigned
 通報: report（operator 宛て）
 ```
@@ -73,12 +75,19 @@ escrow は、紛争を T1 より前に裁定する義務を負います。
   - t2 以降は、利用者が `refundToUser` で取り戻せます。
 - 支払いと裁定は EIP-712 で署名した SafeTx です。裁定の分割には `MultiSendCallOnly` を使います。
 
+## 身元と鍵の結び付け
+
+注文の依頼（`order.request`）には `key_proof` を付けます。
+Nostr の身元と、多重署名に入れるチェーンの鍵（BTC の注文鍵、または EVM のアカウント）が同じ人のものであることを、チェーンの鍵の署名で示します。
+これが無いと、別の身元が利用者の公開鍵を写した依頼を作り、escrow に「自分が利用者だ」と名乗れてしまいます。
+
 ## 住所
 
 届け先は使い捨ての鍵 K で暗号化します（XChaCha20-Poly1305）。
 
 - K は、shopper 宛てと escrow 宛てに、それぞれ NIP-44 で包みます。
-- escrow 宛てのものは、紛争のときに shopper（または利用者）が escrow に渡します。
+- escrow 宛てのものは依頼には入れず、`order.escrow_key` で shopper に預けます（依頼にはそのハッシュだけを入れます）。
+  紛争のときに shopper（または利用者）が escrow に渡すので、紛争の無い注文では escrow は住所を読めません。
 
 ## 地域
 
