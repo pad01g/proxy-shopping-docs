@@ -1,0 +1,10 @@
+title: proxy-shopping
+description: 暗号通貨で、現金や特定の決済しか使えない店の買い物を代行してもらう P2P 網
+theme: minima
+lang: ja
+markdown: kramdown
+header_pages:
+  - overview.md
+  - roles.md
+  - quickstart.md
+  - protocol.md
