@@ -1,8 +1,14 @@
 ---
 layout: page
 title: 仕組み
-permalink: /overview/
+permalink: /jp/overview/
+lang: ja
+ref: overview
+nav_order: 2
+redirect_from: /overview/
 ---
+
+{% include langnav.html %}
 
 ## 何ができるか
 

@@ -1,8 +1,14 @@
 ---
 layout: page
 title: 役割
-permalink: /roles/
+permalink: /jp/roles/
+lang: ja
+ref: roles
+nav_order: 3
+redirect_from: /roles/
 ---
+
+{% include langnav.html %}
 
 | 役割 | 常時オンライン | 何を使うか | 何をするか | 不正をしたら |
 |---|---|---|---|---|

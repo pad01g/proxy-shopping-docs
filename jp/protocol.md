@@ -1,8 +1,14 @@
 ---
 layout: page
 title: プロトコル
-permalink: /protocol/
+permalink: /jp/protocol/
+lang: ja
+ref: protocol
+nav_order: 5
+redirect_from: /protocol/
 ---
+
+{% include langnav.html %}
 
 完全な仕様は proxy-shopping-go の `docs/spec.md` にあります。ここでは要点だけをまとめます。
 
@@ -38,7 +44,7 @@ NIP-59（gift wrap → seal → 中身）で包みます。
 
 - 受信箱のリレーのうち、k 個（既定 2）以上に送ります。
 - 受け手は `ack` を返し、送り手は ack が来るまで再送します。
-- 1 通は 30000 byte までです。スクリーンショットのような大きい証拠は、ハッシュだけをメッセージに載せます。
+- 1 通は 28000 byte までです。スクリーンショットのような大きい証拠は、ハッシュだけをメッセージに載せます。
   紛争のときに、`attachment` として分けて escrow に送ります。
 
 ```
