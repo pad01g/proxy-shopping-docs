@@ -142,6 +142,8 @@ psctl delegate --network ps-main --mnemonic-file coordinator.mnemonic --operator
 psctl list --network ps-main --mnemonic-file operator.mnemonic --file list.json --publish wss://relay.example
 ```
 
+<a id="3-run-your-own-network-role-anywhere-without-permission"></a>
+
 ## 3. どこでも、許可なしで自分の役割を立てる
 
 proxy-shopping には中央の運営者も、登録の手続きもありません。信頼の連なりは鍵と署名済みの Nostr のイベントだけなので、
@@ -165,7 +167,7 @@ proxy-shopping には中央の運営者も、登録の手続きもありませ�
 
 利用者には正直に伝えてください。公開網は新しく、BTC signet（テスト用のコイン）で動いています。稼ぎは、使う人が出てきてからです。
 
-## 貢献
+## 貢献 {#contributing}
 
 **pull request を歓迎します**（どのレポジトリでも）。shopper-bot の店ごとの driver、新しい決済手段やチェーン、この文書の翻訳、
 プロトコルのレビュー、不具合の修正、[登録簿](https://github.com/pad01g/proxy-shopping-registry) への登録など。GitHub で issue か pull request を開いてください。

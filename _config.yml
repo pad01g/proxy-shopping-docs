@@ -1,9 +1,14 @@
 title: proxy-shopping
-description: A P2P network for having someone buy for you with crypto at shops that take only cash or specific payments / 暗号通貨で、現金や特定の決済しか使えない店の買い物を代行してもらう P2P 網
+url: https://pad01g.github.io
+baseurl: /proxy-shopping-docs
+description: A P2P network for having someone buy for you with crypto at shops that take only cash or specific payments — documentation in 14 languages
 theme: minima
-lang: ja
+lang: en
 markdown: kramdown
 plugins:
   - jekyll-redirect-from
 # the language pages carry their own navigation (_includes/langnav.html)
-header_pages: []
+header_pages: []  # unused: _includes/header.html has no page menu
+exclude:
+  - CONTRIBUTING.md
+  - README.md

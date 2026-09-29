@@ -1,0 +1,11 @@
+{%- comment -%}
+  minima 2.5.1 _includes/header.html without the page menu: the language pages carry their own
+  navigation (_includes/langnav.html), and minima would otherwise list every page of every language
+  (an empty `header_pages` falls back to all pages).
+{%- endcomment -%}
+<header class="site-header" role="banner">
+
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+  </div>
+</header>

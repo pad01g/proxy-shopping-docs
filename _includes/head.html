@@ -6,5 +6,28 @@
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- comment -%} machine-readable overview for AI agents (llms.txt) {%- endcomment -%}
   <link rel="describedby" type="text/markdown" href="{{ "/llms.txt" | relative_url }}">
+  {%- comment -%} every translation of this page (pages sharing `ref`), and x-default = English {%- endcomment -%}
+  {%- if page.ref %}
+    {%- assign translations = site.pages | where: "ref", page.ref -%}
+    {%- for l in site.data.languages -%}
+      {%- assign t = translations | where: "lang", l.code | first -%}
+      {%- if t %}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ t.url | absolute_url }}">
+        {%- if l.code == "en" %}
+  <link rel="alternate" hreflang="x-default" href="{{ t.url | absolute_url }}">
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+  {%- assign page_language = site.data.languages | where: "code", page.lang | first -%}
+  {%- if page_language.dir == "rtl" %}
+  <style>
+    html[dir="rtl"] ul, html[dir="rtl"] ol { margin-left: 0; margin-right: 30px; }
+    html[dir="rtl"] .langnav ul { margin-right: 0; }
+    html[dir="rtl"] table { direction: rtl; }
+    html[dir="rtl"] table th, html[dir="rtl"] table td { text-align: right; }
+    html[dir="rtl"] pre, html[dir="rtl"] code { direction: ltr; text-align: left; unicode-bidi: embed; }
+  </style>
+  {%- endif %}
   {%- feed_meta -%}
 </head>

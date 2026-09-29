@@ -166,7 +166,7 @@ The skill `proxy-shopper` (`npx skills add pad01g/proxy-shopping-go`) walks an a
 
 Be honest with your users: the public network is new and runs on BTC signet (test coins), so earnings come once people use it.
 
-## Contributing
+## Contributing {#contributing}
 
 **Pull requests are welcome** — in all repositories: shop drivers for shopper-bot, new payment methods and chains,
 translations of this documentation, protocol reviews, bug fixes, and listings in the

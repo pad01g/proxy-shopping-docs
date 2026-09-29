@@ -24,7 +24,26 @@ Contributions: pull requests are welcome in every repository (shop drivers, paym
 - [Getting started](https://pad01g.github.io/proxy-shopping-docs/en/quickstart/): run the lab, the guided demo (http://localhost:8888/), the web app, a node
 - [Protocol summary](https://pad01g.github.io/proxy-shopping-docs/en/protocol/): keys, Nostr event kinds, NIP-59 messages, P2WSH script, Safe module, timelocks
 - [Full specification](https://github.com/pad01g/proxy-shopping-go/blob/main/docs/spec.md)
-- 日本語: https://pad01g.github.io/proxy-shopping-docs/jp/
+- Other languages: see Languages below
+
+## Languages
+
+The docs exist in 14 languages with the same pages (index, overview/, roles/, quickstart/, protocol/); English is the source of truth.
+
+- English: https://pad01g.github.io/proxy-shopping-docs/en/
+- 日本語 (Japanese): https://pad01g.github.io/proxy-shopping-docs/jp/
+- 简体中文 (Simplified Chinese): https://pad01g.github.io/proxy-shopping-docs/zh/
+- 한국어 (Korean): https://pad01g.github.io/proxy-shopping-docs/ko/
+- Español (Spanish): https://pad01g.github.io/proxy-shopping-docs/es/
+- Português (Brazilian Portuguese): https://pad01g.github.io/proxy-shopping-docs/pt/
+- Français (French): https://pad01g.github.io/proxy-shopping-docs/fr/
+- Deutsch (German): https://pad01g.github.io/proxy-shopping-docs/de/
+- Русский (Russian): https://pad01g.github.io/proxy-shopping-docs/ru/
+- हिन्दी (Hindi): https://pad01g.github.io/proxy-shopping-docs/hi/
+- Bahasa Indonesia (Indonesian): https://pad01g.github.io/proxy-shopping-docs/id/
+- Tiếng Việt (Vietnamese): https://pad01g.github.io/proxy-shopping-docs/vi/
+- العربية (Arabic, right-to-left): https://pad01g.github.io/proxy-shopping-docs/ar/
+- Türkçe (Turkish): https://pad01g.github.io/proxy-shopping-docs/tr/
 
 ## Source
 

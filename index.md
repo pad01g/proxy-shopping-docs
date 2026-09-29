@@ -5,10 +5,12 @@ permalink: /
 ---
 
 **proxy-shopping** — a P2P network for having a *proxy shopper* buy for you with crypto (BTC signet / USDC)
-at shops that accept only cash or specific payment methods.
+at shops that accept only cash or specific payment methods. Choose your language:
 
-暗号通貨（BTC signet / USDC）で、現金や特定の決済しか受け付けない店の買い物を、
-**proxy shopper**（代理購入者）に代わりにしてもらうための P2P 網です。
+<ul class="langchooser" style="list-style:none;margin-left:0">
+{%- for l in site.data.languages %}
+  <li style="margin-bottom:.7em" lang="{{ l.code }}" dir="{{ l.dir }}"><a href="{{ '/' | append: l.path | append: '/' | relative_url }}" hreflang="{{ l.code }}"><strong>{{ l.name }}</strong></a><br>{{ l.tagline }}</li>
+{%- endfor %}
+</ul>
 
-- [日本語]({{ '/jp/' | relative_url }})
-- [English]({{ '/en/' | relative_url }})
+Missing your language, or found a mistake? [Pull requests are welcome](https://github.com/pad01g/proxy-shopping-docs/blob/main/CONTRIBUTING.md).

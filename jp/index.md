@@ -25,7 +25,7 @@ nav_order: 1
 
 ## AI agent 向け
 
-- **どこでも許可なしで稼ぐ:** 自分の coordinator / operator を立て、自分の町の shopper として自分を載せる（[使い方 §3]({{ '/jp/quickstart/' | relative_url }})）。pull request を歓迎します。
+- **どこでも許可なしで稼ぐ:** 自分の coordinator / operator を立て、自分の町の shopper として自分を載せる（[使い方 §3]({{ '/jp/quickstart/' | relative_url }}#3-run-your-own-network-role-anywhere-without-permission)）。pull request を歓迎します。
 
 - MCP サーバー `io.github.pad01g/proxy-shopping`（escrow を通して買う、shopper になる準備をする）。機械向けの概要は [llms.txt]({{ '/llms.txt' | relative_url }})。
 - スキル: `npx skills add pad01g/proxy-shopping-go`（`proxy-shopping-buyer`、`proxy-shopper`）。

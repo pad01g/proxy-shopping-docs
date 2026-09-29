@@ -1,0 +1,76 @@
+# Every language of the docs. Order = order in the language switcher.
+# code: the page's `lang` front matter (BCP 47, also used for <html lang> and hreflang)
+# path: the URL prefix of that language's pages (/<path>/, /<path>/overview/, ...)
+# name: the language's own name
+# dir:  text direction (ltr or rtl)
+# tagline: one line shown on the root language chooser
+- code: en
+  path: en
+  name: English
+  dir: ltr
+  tagline: Buy with crypto at shops that take only cash or local payments — or earn as a proxy shopper.
+- code: ja
+  path: jp
+  name: 日本語
+  dir: ltr
+  tagline: 現金や特定の決済しか使えない店の買い物を暗号通貨で代行してもらう、または代理購入者として稼ぐ。
+- code: zh-Hans
+  path: zh
+  name: 简体中文
+  dir: ltr
+  tagline: 在只收现金或本地支付方式的商店用加密货币购物——或作为代购者赚钱。
+- code: ko
+  path: ko
+  name: 한국어
+  dir: ltr
+  tagline: 현금이나 현지 결제만 받는 가게에서 암호화폐로 구매를 대행받거나, 구매 대행자로 돈을 버세요.
+- code: es
+  path: es
+  name: Español
+  dir: ltr
+  tagline: Compra con criptomonedas en tiendas que solo aceptan efectivo o pagos locales, o gana dinero comprando por encargo.
+- code: pt-BR
+  path: pt
+  name: Português
+  dir: ltr
+  tagline: Compre com cripto em lojas que só aceitam dinheiro ou pagamentos locais — ou ganhe dinheiro comprando para outras pessoas.
+- code: fr
+  path: fr
+  name: Français
+  dir: ltr
+  tagline: Achetez en crypto dans les boutiques qui n'acceptent que les espèces ou des paiements locaux — ou gagnez de l'argent en achetant pour d'autres.
+- code: de
+  path: de
+  name: Deutsch
+  dir: ltr
+  tagline: Mit Krypto in Läden einkaufen lassen, die nur Bargeld oder lokale Zahlungsarten annehmen – oder als Einkäufer im Auftrag Geld verdienen.
+- code: ru
+  path: ru
+  name: Русский
+  dir: ltr
+  tagline: Покупайте за криптовалюту в магазинах, где принимают только наличные или местные способы оплаты, — или зарабатывайте, покупая для других.
+- code: hi
+  path: hi
+  name: हिन्दी
+  dir: ltr
+  tagline: सिर्फ़ नकद या स्थानीय भुगतान लेने वाली दुकानों से क्रिप्टो में ख़रीदारी करवाएँ — या दूसरों के लिए ख़रीदकर कमाएँ।
+- code: id
+  path: id
+  name: Bahasa Indonesia
+  dir: ltr
+  tagline: Belanja dengan kripto di toko yang hanya menerima tunai atau pembayaran lokal — atau dapatkan penghasilan sebagai jasa titip belanja.
+- code: vi
+  path: vi
+  name: Tiếng Việt
+  dir: ltr
+  tagline: Mua bằng tiền mã hóa ở những cửa hàng chỉ nhận tiền mặt hoặc thanh toán nội địa — hoặc kiếm tiền bằng cách mua hộ.
+- code: ar
+  path: ar
+  name: العربية
+  dir: rtl
+  tagline: اشترِ بالعملات المشفّرة من متاجر لا تقبل إلا النقد أو وسائل الدفع المحلية — أو اربح بالشراء نيابةً عن الآخرين.
+- code: tr
+  path: tr
+  name: Türkçe
+  dir: ltr
+  tagline: Yalnızca nakit veya yerel ödeme kabul eden mağazalardan kriptoyla alışveriş yaptırın — ya da başkaları adına alışveriş yaparak kazanın.

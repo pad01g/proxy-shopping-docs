@@ -1,0 +1,26 @@
+{%- comment -%}
+  minima 2.5.1 _layouts/default.html, unchanged except that <html> also gets dir="rtl"
+  for right-to-left languages (dir from _data/languages.yml, looked up by page.lang).
+{%- endcomment -%}
+{%- assign page_lang = page.lang | default: site.lang | default: "en" -%}
+{%- assign page_language = site.data.languages | where: "code", page_lang | first -%}
+<!DOCTYPE html>
+<html lang="{{ page_lang }}"{% if page_language.dir == "rtl" %} dir="rtl"{% endif %}>
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+  </body>
+
+</html>
