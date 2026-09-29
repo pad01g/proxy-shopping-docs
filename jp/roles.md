@@ -49,3 +49,22 @@ redirect_from: /roles/
 ## coordinator
 
 - operator に委任書を出す。失効させるときは `revoked` の新しい版を出す。
+
+## 登録簿に載る
+
+管理者の信頼の登録簿は、GitHub のレポジトリ
+[pad01g/proxy-shopping-registry](https://github.com/pad01g/proxy-shopping-registry) です。
+**pull request がマージされたことが承認になります。**
+マージのたびに CI が登録簿の鍵で新しい委任書と一覧に署名し、公開の Nostr リレーと
+https://pad01g.github.io/proxy-shopping-registry/events.json に公開します。
+
+| なりたい役割 | pull request で足すもの | マージで起きること |
+|---|---|---|
+| shopper | `shoppers/<name>.json`（pk、連絡先、説明、現金で行ける地域、決済手段、組む escrow） | 登録簿の operator が、あなたの shopper × escrow の組み合わせを一覧に載せる |
+| escrow | `escrows/<name>.json`（pk、連絡先、説明、裁定までの日数） | shopper があなたを指名でき、組み合わせが表に出る |
+| operator | `operators/<name>.json`（pk、連絡先、説明、担当地域） | 登録簿の coordinator があなたに委任する。以後は自分の一覧に署名できる |
+| coordinator | `coordinators/<name>.json`（pk、連絡先、説明） | アプリが利用者に示す coordinator の目録に載る（誰を信頼するかは各利用者が選ぶ） |
+
+`pk` は Nostr の公開鍵（64 文字の 16 進数）です。Web 画面の設定に表示され、`psctl keys --mnemonic-file …` でも出せます。
+外すときは、そのファイルを理由を添えて `revoked/` に移す pull request を出します。
+ファイルの形とコマンドの詳細は、登録簿の README にあります。

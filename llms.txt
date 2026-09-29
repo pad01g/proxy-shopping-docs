@@ -1,0 +1,26 @@
+# proxy-shopping
+
+> A peer-to-peer network (libp2p + Nostr) for buying with crypto at shops that accept only cash, cards or other local payment methods: a proxy shopper buys the item for a remote user and ships it; the user pays in BTC (signet) or USDC into a per-order 2-of-3 escrow (user, shopper, escrow) with timelocks. Two ways to use it: buy something you cannot pay for directly, or earn money as a proxy shopper in your region.
+
+Status: new and experimental. The public network `ps-main` uses public Nostr relays (wss://relay.damus.io, wss://nos.lol, wss://relay.primal.net) and BTC signet (test coins); it may have no shoppers yet. A local docker compose lab with shoppers, fake shops and a guided demo is always available.
+
+## Use it
+
+- [MCP server](https://github.com/pad01g/proxy-shopping-web/tree/main/packages/mcp): registry name `io.github.pad01g/proxy-shopping`; run `docker run -i --rm -v proxy-shopping-mcp:/data ghcr.io/pad01g/proxy-shopping-mcp:0.1.0`. Tools: network_info, wallet, find_offers, request_quote, accept_quote, fund_order, confirm_receipt, open_dispute, countersign_ruling, refund_after_timelock, become_shopper, registry_entry. Money-moving tools require `confirm: true`.
+- [Skill: proxy-shopping-buyer](https://github.com/pad01g/proxy-shopping-go/blob/main/skills/proxy-shopping-buyer/SKILL.md): buy from cash-only or unsupported shops with crypto through the escrow. Install: `npx skills add pad01g/proxy-shopping-go`
+- [Skill: proxy-shopper](https://github.com/pad01g/proxy-shopping-go/blob/main/skills/proxy-shopper/SKILL.md): earn as a proxy shopper — run the always-online Go node and the browser automation bot, get listed.
+- [Trust registry](https://github.com/pad01g/proxy-shopping-registry): a merged pull request lists a shopper × escrow combination, delegates to an operator, or lists a coordinator. Signed events: https://pad01g.github.io/proxy-shopping-registry/events.json
+
+## Docs
+
+- [How it works](https://pad01g.github.io/proxy-shopping-docs/en/overview/): architecture, trust (coordinator → operator → list), fees, cash-only shops, shop risk
+- [Roles](https://pad01g.github.io/proxy-shopping-docs/en/roles/): user, proxy shopper, escrow, operator, coordinator
+- [Getting started](https://pad01g.github.io/proxy-shopping-docs/en/quickstart/): run the lab, the guided demo (http://localhost:8888/), the web app, a node
+- [Protocol summary](https://pad01g.github.io/proxy-shopping-docs/en/protocol/): keys, Nostr event kinds, NIP-59 messages, P2WSH script, Safe module, timelocks
+- [Full specification](https://github.com/pad01g/proxy-shopping-go/blob/main/docs/spec.md)
+- 日本語: https://pad01g.github.io/proxy-shopping-docs/jp/
+
+## Source
+
+- [proxy-shopping-go](https://github.com/pad01g/proxy-shopping-go): Go node (shopper / escrow / operator / relay), Nostr relay, contracts (Safe v1.4.1 + timelock module), fake shops, shopper-bot, docker compose lab and e2e (MIT)
+- [proxy-shopping-web](https://github.com/pad01g/proxy-shopping-web): TypeScript protocol core, web app, guided demo, MCP server (MIT)

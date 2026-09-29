@@ -48,3 +48,21 @@ nav_order: 3
 ## Coordinator
 
 - Issues delegations to operators. Revoking means publishing a new version with `revoked`.
+
+## Getting listed (the registry)
+
+The maintainer's trust registry is the GitHub repository
+[pad01g/proxy-shopping-registry](https://github.com/pad01g/proxy-shopping-registry). **A merged pull request is the
+approval:** after every merge, CI signs the new delegations and lists with the registry's keys and publishes them
+(to the public Nostr relays and to https://pad01g.github.io/proxy-shopping-registry/events.json).
+
+| You want to be | Add in a pull request | What the merge does |
+|---|---|---|
+| shopper | `shoppers/<name>.json` (pk, contact, description, cash regions, payments, the escrows you work with) | the registry's operator lists your shopper × escrow combinations |
+| escrow | `escrows/<name>.json` (pk, contact, description, SLA days) | shoppers can name you; your combinations appear |
+| operator | `operators/<name>.json` (pk, contact, description, regions) | the registry's coordinator delegates to you; you then sign your own lists |
+| coordinator | `coordinators/<name>.json` (pk, contact, description) | you appear in the coordinator directory the apps offer to users (each user still chooses whom to trust) |
+
+`pk` is your Nostr public key (64 hex chars): the web app shows it in Settings, and `psctl keys --mnemonic-file …`
+prints it. Removing someone is a pull request that moves their file to `revoked/` with a reason. The registry's
+README has the exact file formats and the commands.

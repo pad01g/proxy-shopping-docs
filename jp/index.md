@@ -23,11 +23,17 @@ nav_order: 1
 - [使い方]({{ '/jp/quickstart/' | relative_url }}): 手元で網をまるごと動かす、デモ画面で通しで試す、Web 画面で注文する、ノードを立てる
 - [プロトコル]({{ '/jp/protocol/' | relative_url }}): メッセージ、スクリプト、Safe、タイムロックの要点
 
+## AI agent 向け
+
+- MCP サーバー `io.github.pad01g/proxy-shopping`（escrow を通して買う、shopper になる準備をする）。機械向けの概要は [llms.txt]({{ '/llms.txt' | relative_url }})。
+- スキル: `npx skills add pad01g/proxy-shopping-go`（`proxy-shopping-buyer`、`proxy-shopper`）。
+- shopper・escrow・operator・coordinator として載るには、[proxy-shopping-registry](https://github.com/pad01g/proxy-shopping-registry) に pull request を出す。マージされたことが承認になる。
+
 ## ソース
 
-レポジトリは非公開です（この文書だけ公開しています）。
+ソースは公開しています（MIT）。
 
 | レポジトリ | 中身 |
 |---|---|
-| proxy-shopping-go | Go ノード、Nostr リレー、コントラクト、架空の店、自動操作ツール、docker compose の検証環境 |
-| proxy-shopping-web | ブラウザ用の中核ライブラリ、Web 画面、デモ画面 |
+| [proxy-shopping-go](https://github.com/pad01g/proxy-shopping-go) | Go ノード、Nostr リレー、コントラクト、架空の店、自動操作ツール、docker compose の検証環境 |
+| [proxy-shopping-web](https://github.com/pad01g/proxy-shopping-web) | ブラウザ用の中核ライブラリ、Web 画面、デモ画面 |

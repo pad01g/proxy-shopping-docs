@@ -24,9 +24,11 @@ docker compose ひとつで、閉じた網を立てられます。インター�
 
 必要なもの: Docker（メモリ 8 GB 程度）。
 
-レポジトリは非公開です。アクセス権がある場合は、proxy-shopping-go と proxy-shopping-web を同じ親ディレクトリに並べて置き、次を実行します。
+proxy-shopping-go と proxy-shopping-web を同じ親ディレクトリに並べて置き、次を実行します。
 
 ```sh
+git clone https://github.com/pad01g/proxy-shopping-go
+git clone https://github.com/pad01g/proxy-shopping-web
 cd proxy-shopping-go
 docker compose up -d --build
 ```

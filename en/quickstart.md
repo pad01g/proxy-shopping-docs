@@ -23,9 +23,11 @@ A single docker compose file brings up a closed network. It does not connect to 
 
 Requirements: Docker (about 8 GB of memory).
 
-The repositories are private. If you have access, put proxy-shopping-go and proxy-shopping-web side by side in the same parent directory and run:
+Put proxy-shopping-go and proxy-shopping-web side by side in the same parent directory and run:
 
 ```sh
+git clone https://github.com/pad01g/proxy-shopping-go
+git clone https://github.com/pad01g/proxy-shopping-web
 cd proxy-shopping-go
 docker compose up -d --build
 ```

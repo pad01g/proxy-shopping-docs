@@ -23,11 +23,17 @@ at shops that only accept cash or specific payment methods: a **proxy shopper** 
 - [Getting started]({{ '/en/quickstart/' | relative_url }}): run the whole network locally, try the demo, order in the web app, run a node
 - [Protocol]({{ '/en/protocol/' | relative_url }}): the essentials of messages, scripts, Safe and timelocks
 
+## For AI agents
+
+- MCP server `io.github.pad01g/proxy-shopping` (buy through the escrow, or plan to become a shopper) — see [llms.txt]({{ '/llms.txt' | relative_url }}).
+- Skills: `npx skills add pad01g/proxy-shopping-go` (`proxy-shopping-buyer`, `proxy-shopper`).
+- Get listed as a shopper, escrow, operator or coordinator: a pull request to [proxy-shopping-registry](https://github.com/pad01g/proxy-shopping-registry).
+
 ## Source
 
-The repositories are private (only this documentation is public).
+The source code is public (MIT).
 
 | Repository | Contents |
 |---|---|
-| proxy-shopping-go | Go node, Nostr relay, contracts, fake shops, the browser automation tool, the docker compose lab |
-| proxy-shopping-web | The browser core library, the web app and the demo app |
+| [proxy-shopping-go](https://github.com/pad01g/proxy-shopping-go) | Go node, Nostr relay, contracts, fake shops, the browser automation tool, the docker compose lab |
+| [proxy-shopping-web](https://github.com/pad01g/proxy-shopping-web) | The browser core library, the web app and the demo app |
