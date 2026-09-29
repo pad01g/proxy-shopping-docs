@@ -4,6 +4,12 @@
 
 Status: new and experimental. The public network `ps-main` uses public Nostr relays (wss://relay.damus.io, wss://nos.lol, wss://relay.primal.net) and BTC signet (test coins); it may have no shoppers yet. A local docker compose lab with shoppers, fake shops and a guided demo is always available.
 
+## Earn anywhere, without permission
+
+Nothing to sign up for: make a coordinator key, delegate to an operator key, and publish a list with yourself as the shopper (and someone you trust as the escrow) for your region, all with `psctl` and public Nostr relays. Users who trust your coordinator see your offers; a pull request to the registry lists your coordinator for everyone. A home machine is enough (outbound connections only; use Tailscale or any VPN to reach it remotely). An AI agent can run the operator/shopper routine; cash-only shops need someone in the region. Guide: https://pad01g.github.io/proxy-shopping-docs/en/quickstart/ (section 3).
+
+Contributions: pull requests are welcome in every repository (shop drivers, payment rails, translations, reviews, fixes).
+
 ## Use it
 
 - [MCP server](https://github.com/pad01g/proxy-shopping-web/tree/main/packages/mcp): registry name `io.github.pad01g/proxy-shopping`; run `docker run -i --rm -v proxy-shopping-mcp:/data ghcr.io/pad01g/proxy-shopping-mcp:0.1.0`. Tools: network_info, wallet, find_offers, request_quote, accept_quote, fund_order, confirm_receipt, open_dispute, countersign_ruling, refund_after_timelock, become_shopper, registry_entry. Money-moving tools require `confirm: true`.

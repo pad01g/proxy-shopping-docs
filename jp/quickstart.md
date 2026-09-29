@@ -141,3 +141,31 @@ psctl keys --mnemonic-file coordinator.mnemonic
 psctl delegate --network ps-main --mnemonic-file coordinator.mnemonic --operator <operator の公開鍵> --publish wss://relay.example
 psctl list --network ps-main --mnemonic-file operator.mnemonic --file list.json --publish wss://relay.example
 ```
+
+## 3. どこでも、許可なしで自分の役割を立てる
+
+proxy-shopping には中央の運営者も、登録の手続きもありません。信頼の連なりは鍵と署名済みの Nostr のイベントだけなので、
+あなた（あるいはあなたの代わりに働く AI agent）が、自分の町で小さな市場を始められます。
+
+1. **coordinator になる:** 鍵を作る（`psctl keys --mnemonic-file coordinator.mnemonic`）。coordinator とはそれだけのものです。
+2. **operator に委任する**（自分の別の鍵でも、信頼できる人でもよい）:
+   `psctl delegate --network ps-main --mnemonic-file coordinator.mnemonic --operator <operator の公開鍵> --publish wss://relay.damus.io,wss://nos.lol,wss://relay.primal.net`
+3. **自分の地域の shopper と escrow を一覧に載せる**（自分が shopper、友人が escrow など）:
+   `psctl list --network ps-main --mnemonic-file operator.mnemonic --file list.json --publish …`
+4. **周りの人に、あなたの coordinator の鍵を信頼してもらう**（Web 画面の設定で加える。MCP サーバーなら `PS_COORDINATORS`）。
+   誰からも見つけてもらうには、[登録簿](https://github.com/pad01g/proxy-shopping-registry) に `coordinators/<name>.json` を足す pull request を出します。
+   自分のコミュニティ向けに同じ承認の仕組みを運営するなら、登録簿を fork します。
+
+**どこで動かすか:** 家の 1 台で十分です。ノードは外向きの接続（Nostr リレーと、NAT の内側なら libp2p の circuit relay）しかしないので、
+ポートを開ける必要はありません。外出先からノードの管理 API や Web 画面を見るには、[Tailscale](https://tailscale.com/) などの VPN を使います。小さな VPS でも動きます。
+
+**AI agent に任せられること:** operator と shopper の日々の作業（ノードの管理 API や MCP サーバーで注文を見守る、一覧を更新する、
+カードの店向けに shopper-bot を動かす、問題を通報する）は agent が受け持てます。どの店・どの地域・歩いて行ける現金の店、といった
+地元の知識こそが、あなたにしか出せない部分です。スキル `proxy-shopper`（`npx skills add pad01g/proxy-shopping-go`）が agent に手順を案内します。
+
+利用者には正直に伝えてください。公開網は新しく、BTC signet（テスト用のコイン）で動いています。稼ぎは、使う人が出てきてからです。
+
+## 貢献
+
+**pull request を歓迎します**（どのレポジトリでも）。shopper-bot の店ごとの driver、新しい決済手段やチェーン、この文書の翻訳、
+プロトコルのレビュー、不具合の修正、[登録簿](https://github.com/pad01g/proxy-shopping-registry) への登録など。GitHub で issue か pull request を開いてください。

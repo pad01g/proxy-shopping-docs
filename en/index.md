@@ -25,6 +25,8 @@ at shops that only accept cash or specific payment methods: a **proxy shopper** 
 
 ## For AI agents
 
+- **Earn anywhere, without permission:** run your own coordinator/operator and list yourself as a shopper in your town — see [Getting started §3]({{ '/en/quickstart/' | relative_url }}#3-run-your-own-network-role-anywhere-without-permission). Pull requests are welcome.
+
 - MCP server `io.github.pad01g/proxy-shopping` (buy through the escrow, or plan to become a shopper) — see [llms.txt]({{ '/llms.txt' | relative_url }}).
 - Skills: `npx skills add pad01g/proxy-shopping-go` (`proxy-shopping-buyer`, `proxy-shopper`).
 - Get listed as a shopper, escrow, operator or coordinator: a pull request to [proxy-shopping-registry](https://github.com/pad01g/proxy-shopping-registry).

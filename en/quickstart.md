@@ -140,3 +140,34 @@ psctl keys --mnemonic-file coordinator.mnemonic
 psctl delegate --network ps-main --mnemonic-file coordinator.mnemonic --operator <operator public key> --publish wss://relay.example
 psctl list --network ps-main --mnemonic-file operator.mnemonic --file list.json --publish wss://relay.example
 ```
+
+## 3. Run your own network role, anywhere, without permission
+
+proxy-shopping has no central operator and nothing to sign up for. The trust chain is just keys and signed Nostr events,
+so you (or an AI agent working for you) can start a local marketplace in your own town:
+
+1. **Be a coordinator:** make a key (`psctl keys --mnemonic-file coordinator.mnemonic`). That is all a coordinator is.
+2. **Delegate to an operator** (your own second key, or someone you trust):
+   `psctl delegate --network ps-main --mnemonic-file coordinator.mnemonic --operator <operator pk> --publish wss://relay.damus.io,wss://nos.lol,wss://relay.primal.net`
+3. **List shoppers and escrows for your region** — yourself as a shopper, a friend as the escrow:
+   `psctl list --network ps-main --mnemonic-file operator.mnemonic --file list.json --publish …`
+4. **Tell people to trust your coordinator key** (add it in the web app's Settings, or `PS_COORDINATORS` for the MCP server).
+   To be found by everyone, open a pull request to the [registry](https://github.com/pad01g/proxy-shopping-registry)
+   adding `coordinators/<name>.json`; to run approvals for your own community the same way, fork the registry.
+
+**Where to run it:** a machine at home is enough. The node only makes outbound connections (Nostr relays, and a libp2p
+circuit relay when it is behind NAT), so you open no ports. Use [Tailscale](https://tailscale.com/) or any VPN to reach
+your node's admin API and the web app from your phone while you are out; a small VPS works too.
+
+**What an AI agent can do:** an agent can run the operator's and shopper's routine — watch orders through the node's admin
+API or the MCP server, keep the lists up to date, drive the shopper-bot for card shops, report problems — and your own
+local knowledge (which shops, which regions, cash-only stores you can walk to) is the part nobody else can offer.
+The skill `proxy-shopper` (`npx skills add pad01g/proxy-shopping-go`) walks an agent through it.
+
+Be honest with your users: the public network is new and runs on BTC signet (test coins), so earnings come once people use it.
+
+## Contributing
+
+**Pull requests are welcome** — in all repositories: shop drivers for shopper-bot, new payment methods and chains,
+translations of this documentation, protocol reviews, bug fixes, and listings in the
+[registry](https://github.com/pad01g/proxy-shopping-registry). Open an issue or a pull request on GitHub.
