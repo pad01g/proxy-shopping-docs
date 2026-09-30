@@ -61,6 +61,8 @@ sehingga setiap skenario mengasumsikan pengguna berada di balik NAT.
 
 ### Coba seluruh alurnya di demo
 
+**Coba di peramban Anda: <https://pad01g.github.io/proxy-shopping-web/> (semuanya disimulasikan di dalam halaman).**
+
 Selagi lab berjalan, buka demo di `http://localhost:8888/` (tidak perlu berkas hosts maupun sertifikat).
 Dalam satu layar, pengguna, escrow, operator, dan koordinator masing-masing punya kunci sendiri (di penyimpanan lokal browser),
 dan pembeli perantaranya adalah node Go yang selalu online itu sendiri. Jalurnya nyata: relay Nostr, bitcoind, anvil, node Go.

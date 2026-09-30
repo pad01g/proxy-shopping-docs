@@ -61,6 +61,8 @@ so every scenario assumes the user is behind NAT.
 
 ### Try the whole flow in the demo
 
+**Try it in your browser: <https://pad01g.github.io/proxy-shopping-web/> (everything simulated in the page).**
+
 With the lab running, open the demo at `http://localhost:8888/` (no hosts file or certificates needed).
 On one screen, the user, escrow, operator and coordinator each have their own key (in the browser's local storage),
 and the shopper is the always-online Go node itself. The paths are real: Nostr relays, bitcoind, anvil, Go nodes.

@@ -61,6 +61,8 @@ así que todos los escenarios suponen que el usuario está detrás de NAT.
 
 ### Probar todo el flujo en la demo
 
+**Pruébalo en tu navegador: <https://pad01g.github.io/proxy-shopping-web/> (todo simulado dentro de la página).**
+
 Con el laboratorio en marcha, abre la demo en `http://localhost:8888/` (no hace falta archivo hosts ni certificados).
 En una sola pantalla, el usuario, el custodio, el operador y el coordinador tienen cada uno su propia clave (en el almacenamiento local del navegador),
 y el comprador por encargo es el propio nodo Go siempre en línea. Los caminos son reales: relays de Nostr, bitcoind, anvil, nodos Go.

@@ -61,6 +61,8 @@ docker compose run --rm runner a e     # pick some
 
 ### 데모에서 전체 흐름 체험하기
 
+**브라우저에서 바로 써 보기: <https://pad01g.github.io/proxy-shopping-web/> (모든 것이 페이지 안에서 시뮬레이션됩니다)**
+
 실험 환경이 실행 중일 때 `http://localhost:8888/`에서 데모를 엽니다(hosts 파일이나 인증서가 필요 없습니다).
 한 화면에서 사용자, 에스크로, 운영자, 코디네이터가 각자 자신의 키(브라우저의 로컬 저장소에 있음)를 가지며,
 구매 대행자는 항상 온라인인 Go 노드 그 자체입니다. 경로는 모두 실제입니다: Nostr 릴레이, bitcoind, anvil, Go 노드.

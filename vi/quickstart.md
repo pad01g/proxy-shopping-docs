@@ -61,6 +61,8 @@ nên mọi kịch bản đều giả định người dùng đứng sau NAT.
 
 ### Thử toàn bộ luồng trong bản demo
 
+**Dùng thử ngay trong trình duyệt: <https://pad01g.github.io/proxy-shopping-web/> (mọi thứ được mô phỏng trong trang).**
+
 Khi lab đang chạy, mở bản demo tại `http://localhost:8888/` (không cần tệp hosts hay chứng chỉ).
 Trên cùng một màn hình, người dùng, bên ký quỹ, nhà vận hành và điều phối viên mỗi bên có khóa riêng (trong bộ nhớ cục bộ của trình duyệt),
 còn người mua hộ chính là node Go luôn trực tuyến. Các đường đi là thật: relay Nostr, bitcoind, anvil, node Go.

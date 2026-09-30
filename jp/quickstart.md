@@ -83,6 +83,8 @@ lab の名前（`*.test`）はコンテナの中でしか引けません。
 
 ### デモ画面で通しで試す
 
+**ブラウザで試す: <https://pad01g.github.io/proxy-shopping-web/>（すべてページの中で模擬しています）**
+
 lab を起動すると、デモ画面が `http://localhost:8888/` で開けます（hosts ファイルや証明書の設定は要りません）。
 1 つの画面の中で、利用者・escrow・operator・coordinator がそれぞれ別の鍵（ブラウザのローカルストレージ）を持ち、
 shopper は常時オンラインの Go ノードがそのまま動きます。経路は本物です（Nostr リレー、bitcoind、anvil、Go ノード）。

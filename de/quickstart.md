@@ -61,6 +61,8 @@ daher geht jedes Szenario davon aus, dass der Nutzer hinter NAT sitzt.
 
 ### Den ganzen Ablauf in der Demo ausprobieren
 
+**Im Browser ausprobieren: <https://pad01g.github.io/proxy-shopping-web/> (alles wird in der Seite simuliert).**
+
 Während die Testumgebung läuft, öffnen Sie die Demo unter `http://localhost:8888/` (keine hosts-Datei und keine Zertifikate nötig).
 Auf einem Bildschirm haben Nutzer, Treuhänder, Betreiber und Koordinator jeweils einen eigenen Schlüssel (im lokalen Speicher des Browsers),
 und der Einkäufer ist der ständig laufende Go-Knoten selbst. Die Wege sind echt: Nostr-Relays, bitcoind, anvil, Go-Knoten.

@@ -61,6 +61,8 @@ docker compose run --rm runner a e     # pick some
 
 ### 在演示中体验完整流程
 
+**在浏览器中试用：<https://pad01g.github.io/proxy-shopping-web/>（一切都在页面中模拟）**
+
 实验环境运行后，打开演示页面 `http://localhost:8888/`（无需修改 hosts 文件或配置证书）。
 在同一个页面上，用户、托管方、运营者和协调者各自拥有自己的密钥（保存在浏览器的本地存储中），
 而代购者就是始终在线的 Go 节点本身。所有路径都是真实的：Nostr 中继、bitcoind、anvil、Go 节点。

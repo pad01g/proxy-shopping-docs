@@ -61,6 +61,8 @@ donc chaque scénario suppose que l'utilisateur est derrière un NAT.
 
 ### Essayer tout le parcours dans la démo
 
+**Essayez-la dans votre navigateur : <https://pad01g.github.io/proxy-shopping-web/> (tout est simulé dans la page).**
+
 Avec le labo en marche, ouvrez la démo à `http://localhost:8888/` (ni fichier hosts ni certificats nécessaires).
 Sur un seul écran, l'utilisateur, le séquestre, l'opérateur et le coordinateur ont chacun leur propre clé (dans le stockage local du navigateur),
 et l'acheteur est le nœud Go toujours en ligne lui-même. Les chemins sont réels : relais Nostr, bitcoind, anvil, nœuds Go.

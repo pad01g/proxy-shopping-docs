@@ -61,6 +61,8 @@ bu yüzden her senaryo kullanıcının NAT arkasında olduğunu varsayar.
 
 ### Tüm akışı demoda deneyin
 
+**Tarayıcınızda deneyin: <https://pad01g.github.io/proxy-shopping-web/> (her şey sayfanın içinde simüle edilir).**
+
 Laboratuvar çalışırken demoyu `http://localhost:8888/` adresinde açın (hosts dosyası ya da sertifika gerekmez).
 Tek bir ekranda kullanıcı, emanetçi, operatör ve koordinatörün her birinin kendi anahtarı vardır (tarayıcının yerel depolamasında),
 alışverişçi ise sürekli çevrimiçi olan Go düğümünün kendisidir. Yollar gerçektir: Nostr röleleri, bitcoind, anvil, Go düğümleri.
